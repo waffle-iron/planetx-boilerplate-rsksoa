@@ -1,5 +1,9 @@
-planetx-boilerplate-rsksoa
+planetx-boilerplate-rsksoa 
 ======
+
+[![Build Status](https://travis-ci.org/Falieson/planetx-boilerplate-rsksoa.svg?branch=develop)](https://travis-ci.org/Falieson/planetx-boilerplate-rsksoa)
+[![Coverage Status](https://coveralls.io/repos/github/Falieson/planetx-boilerplate-rsksoa/badge.svg?branch=develop)](https://coveralls.io/github/Falieson/planetx-boilerplate-rsksoa?branch=develop)
+[![Known Vulnerabilities](https://snyk.io/test/github/Falieson/planetx-boilerplate-rsksoa/badge.svg)](https://snyk.io/test/github/Falieson/planetx-boilerplate-rsksoa)
 
 PlanetX flavor of [react-starter-kit](https://github.com/kriasoft/react-starter-kit)
 ------
