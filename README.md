@@ -44,7 +44,7 @@ Check out the [wiki](https://github.com/Falieson/planetx-boilerplate-rsksoa/wiki
   * [Node.js](https://nodejs.org/) v6.5 or newer
   * `npm` v3.10 or newer (new to [npm](https://docs.npmjs.com/)?)
   * `node-gyp` prerequisites mentioned [here](https://github.com/nodejs/node-gyp)
-  * Text editor or IDE pre-configured with React/JSX/Flow/ESlint ([learn more](./how-to-configure-text-editors.md))
+  * Text editor or IDE pre-configured with React/JSX/Flow/ESlint ([learn more](./docs/RSK/RSK_how-to-configure-text-editors.md))
 
 
 ## File Structure
