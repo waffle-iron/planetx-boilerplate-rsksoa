@@ -1,17 +1,46 @@
 {
-  "name": "web",
-  "version": "0.0.0",
-  "private": true,
-  "engines": {
-    "node": ">=6.5",
-    "npm": ">=3.10"
+  "name": "planetx-boilerplate-rsksoa",
+  "author": "Florian Mettetal <florianmettetal.developer@gmail.com>",
+  "version": "0.1.0",
+  "private": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:Falieson/planetx-boilerplate-rsksoa.git"
   },
-  "browserslist": [
-    ">1%",
-    "last 4 versions",
-    "Firefox ESR",
-    "not ie < 9"
+  "homepage": "https://github.com:Falieson/planetx-boilerplate-rsksoa#readme",
+  "bugs": {
+    "url": "https://github.com:Falieson/planetx-boilerplate-rsksoa/issues"
+  },
+  "keywords": [
+    "react",
+    "webpack2",
+    "meteor",
+    "planetx",
+    "crater",
+    "babel"
   ],
+  "scripts": {
+    "lint:js": "eslint src tools",
+    "lint:css": "stylelint \"src/**/*.{css,less,scss,sss}\"",
+    "lint:staged": "lint-staged",
+    "lint": "yarn run lint:js && yarn run lint:css",
+    "test": "mocha",
+    "test:watch": "yarn run test -- --reporter min --watch",
+    "test:cover": "cross-env NODE_ENV=test nyc npm run test",
+    "coverage": "yarn run test:cover && nyc report --reporter=html && opn coverage/index.html",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "relay": "relay-compiler --src ./src --schema ./src/schema.graphql",
+    "clean": "babel-node tools/run clean",
+    "copy": "babel-node tools/run copy",
+    "bundle": "babel-node tools/run bundle",
+    "build": "babel-node tools/run build",
+    "build:stats": "yarn run build -- --release --analyse",
+    "deploy": "babel-node tools/run deploy",
+    "render": "babel-node tools/run render",
+    "serve": "babel-node tools/run runServer",
+    "start": "babel-node tools/run start"
+  },
   "dependencies": {
     "babel-polyfill": "6.23.0",
     "bluebird": "3.5.0",
@@ -124,6 +153,16 @@
     "webpack-hot-middleware": "2.18.0",
     "write-file-webpack-plugin": "4.0.2"
   },
+  "engines": {
+    "node": ">=6.5",
+    "npm": ">=3.10"
+  },
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 9"
+  ],
   "babel": {
     "presets": [
       [
@@ -163,26 +202,5 @@
       "stylelint",
       "git add"
     ]
-  },
-  "scripts": {
-    "lint:js": "eslint src tools",
-    "lint:css": "stylelint \"src/**/*.{css,less,scss,sss}\"",
-    "lint:staged": "lint-staged",
-    "lint": "yarn run lint:js && yarn run lint:css",
-    "test": "mocha",
-    "test:watch": "yarn run test -- --reporter min --watch",
-    "test:cover": "cross-env NODE_ENV=test nyc npm run test",
-    "coverage": "yarn run test:cover && nyc report --reporter=html && opn coverage/index.html",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "relay": "relay-compiler --src ./src --schema ./src/schema.graphql",
-    "clean": "babel-node tools/run clean",
-    "copy": "babel-node tools/run copy",
-    "bundle": "babel-node tools/run bundle",
-    "build": "babel-node tools/run build",
-    "build:stats": "yarn run build -- --release --analyse",
-    "deploy": "babel-node tools/run deploy",
-    "render": "babel-node tools/run render",
-    "serve": "babel-node tools/run runServer",
-    "start": "babel-node tools/run start"
   }
 }
