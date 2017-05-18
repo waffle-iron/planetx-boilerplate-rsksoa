@@ -1,11 +1,11 @@
 /**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
+  * React Starter Kit (https://www.reactstarterkit.com/)
+  *
+  * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
+  *
+  * This source code is licensed under the MIT license found in the
+  * LICENSE.txt file in the root directory of this source tree.
+**/
 
 import path from 'path';
 import express from 'express';
@@ -18,8 +18,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/server';
 import PrettyError from 'pretty-error';
 import { printSchema } from 'graphql';
-import App from './components/App';
-import Html from './components/Html';
+import App from './ui/App';
+import Html from './ui/Html';
 import ApiClient from './ApiClient';
 import { ErrorPageWithoutStyle } from './routes/error/ErrorPage';
 import errorPageStyle from './routes/error/ErrorPage.css';

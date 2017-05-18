@@ -58,13 +58,12 @@ Before you start, take a moment to see how the project structure looks like:
 │   ├── /RSK/                   # React-Starter-Kit documentation
 ├── /licenses/                  # Licenses
 ├── /node_modules/              # 3rd-party libraries and utilities
+├── /public/                    # Static files which are copied into the /build/public folder
 ├── /src/                       # The source code of the application
-│   ├── /components/            # React components
-│   ├── /content/               # Static pages like About Us, Privacy Policy etc.
-│   ├── /core/                  # Core framework and utility functions
 │   ├── /data/                  # GraphQL server schema and data models
-│   ├── /public/                # Static files which are copied into the /build/public folder
-│   ├── /routes/                # Page/screen components along with the routing information
+│   ├── /routes/                # Pages/screens along with their routing information
+│   ├── /modules/               # Modularized Components that haven't been extracted to their own repo yet
+│   ├── /ui/                    # App specific React components that won't be modularized
 │   ├── /client.js              # Client-side startup script
 │   ├── /config.js              # Global application settings
 │   └── /server.js              # Server-side startup script

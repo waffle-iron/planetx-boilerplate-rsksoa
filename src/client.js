@@ -1,11 +1,11 @@
 /**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
+  * React Starter Kit (https://www.reactstarterkit.com/)
+  *
+  * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
+  *
+  * This source code is licensed under the MIT license found in the
+  * LICENSE.txt file in the root directory of this source tree.
+**/
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -14,7 +14,7 @@ import deepForceUpdate from 'react-deep-force-update';
 import FastClick from 'fastclick';
 import queryString from 'query-string';
 import { createPath } from 'history/PathUtils';
-import App from './components/App';
+import App from './ui/App';
 import ApiClient from './ApiClient';
 import history from './history';
 import { updateMeta } from './DOMUtils';
