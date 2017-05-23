@@ -19,10 +19,11 @@ export default {
   async action({ api }) {
     const data = await api.fetchQuery(graphql`query indexHomeQuery {
       me { ...Layout_me }
+      counter { ...Home_counter }
     }`);
     return {
       title: 'React Starter Kit',
-      component: <Layout me={data.me}><Home /></Layout>,
+      component: <Layout me={data.me}><Home counter={data.counter} /></Layout>,
     };
   },
 

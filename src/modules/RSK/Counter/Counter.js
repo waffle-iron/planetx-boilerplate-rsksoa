@@ -12,24 +12,42 @@
 **/
 
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Counter.css';
 
 class Counter extends React.Component {
+  static propTypes = {
+    count: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+    }).isRequired,
+    changeCounter: PropTypes.func.isRequired,
+  }
+
   constructor(props) {
     super(props);
-    this.state = { value: 0 };
+    this.state = { value: this.props.count.value };
   }
 
   increment = (event) => {
     event.preventDefault();
-    this.setState({ value: this.state.value += 1 });
+    const value = this.state.value + 1;
+    this.setState({ value });
+    this.props.changeCounter({
+      id: this.props.count.id,
+      value,
+    });
   };
 
   decrement = () => {
     event.preventDefault();
-    this.setState({ value: this.state.value -= 1 });
+    const value = this.state.value - 1;
+    this.setState({ value });
+    this.props.changeCounter({
+      id: this.props.count.id,
+      value,
+    });
   };
 
   render() {
@@ -39,8 +57,8 @@ class Counter extends React.Component {
           <h2>React.js Counter</h2>
           <p>Count: {this.state.value}</p>
           <p>
-            <button className={s.button} onClick={this.increment}>Increment</button>
             <button className={s.button} onClick={this.decrement}>Decrement</button>
+            <button className={s.button} onClick={this.increment}>Increment</button>
           </p>
         </div>
       </div>

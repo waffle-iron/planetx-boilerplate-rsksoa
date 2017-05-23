@@ -67,7 +67,8 @@ const config = {
             ...isDebug ? [] : ['react-optimize'],
           ],
           plugins: [
-            'relay',
+            ['relay', { schema: path.resolve(__dirname, '../src/schema.graphql') }],
+            // 'relay',
             // Adds component stack to warning messages
             // https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-react-jsx-source
             ...isDebug ? ['transform-react-jsx-source'] : [],

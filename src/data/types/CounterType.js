@@ -10,16 +10,16 @@
 import {
   GraphQLObjectType as ObjectType,
   GraphQLID as ID,
-  GraphQLString as StringType,
+  GraphQLInt as IntegerType,
   GraphQLNonNull as NonNull,
 } from 'graphql';
 
-const UserType = new ObjectType({
-  name: 'User',
+const CounterType = new ObjectType({
+  name: 'Counter',
   fields: {
     id: { type: new NonNull(ID) },
-    email: { type: StringType },
+    value: { type: IntegerType },
   },
 });
 
-export default UserType;
+export default CounterType;

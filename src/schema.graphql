@@ -1,3 +1,29 @@
+type Counter {
+  id: ID!
+  value: Int
+}
+
+input CounterInput {
+  id: ID!
+  value: Int!
+  clientMutationId: String
+}
+
+type CounterPayload {
+  id: ID!
+  value: Int!
+  clientMutationId: String
+}
+
+type createCounter {
+  id: ID!
+  value: Int
+}
+
+type Mutation {
+  createCounter(input: CounterInput!): CounterPayload
+}
+
 type NewsItem {
   title: String!
   link: String!
@@ -9,6 +35,7 @@ type NewsItem {
 type Query {
   me: User
   news: [NewsItem]
+  counter: Counter
 }
 
 type User {

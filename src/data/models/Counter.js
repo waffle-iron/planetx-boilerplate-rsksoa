@@ -7,13 +7,20 @@
   * LICENSE.txt file in the root directory of this source tree.
 **/
 
-import Sequelize from 'sequelize';
-import config from '../config';
+import DataType from 'sequelize';
+import Model from '../sequelize';
 
-const sequelize = new Sequelize(config.databaseUrl, {
-  define: {
-    freezeTableName: true,
+const Counter = Model.define('Counter', {
+
+  id: {
+    type: DataType.UUID,
+    defaultValue: DataType.UUIDV1,
+    primaryKey: true,
+  },
+
+  value: {
+    type: DataType.INTEGER(255),
   },
 });
 
-export default sequelize;
+export default Counter;
