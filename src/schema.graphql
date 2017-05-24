@@ -4,24 +4,13 @@ type Counter {
 }
 
 input CounterInput {
-  id: ID!
-  value: Int!
-  clientMutationId: String
-}
-
-type CounterPayload {
-  id: ID!
-  value: Int!
-  clientMutationId: String
-}
-
-type createCounter {
-  id: ID!
+  id: ID
   value: Int
+  clientMutationId: String
 }
 
 type Mutation {
-  createCounter(input: CounterInput!): CounterPayload
+  createCounter(input: CounterInput): Counter
 }
 
 type NewsItem {
