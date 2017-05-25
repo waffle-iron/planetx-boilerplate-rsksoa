@@ -10,11 +10,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { createFragmentContainer, graphql } from 'react-relay';
-import Relay from 'react-relay/classic';
-
+import { createFragmentContainer } from 'react-relay';
+import CounterMutation from "../../data/mutations/counter";
 import Counter from '../../modules/RSK/Counter/';
-import CounterMutation from '../../data/mutations/counter';
 import s from './Home.css';
 
 class Home extends React.Component {
@@ -26,12 +24,7 @@ class Home extends React.Component {
   }
 
   changeCounter = (val) => {
-    Relay.Store.commitUpdate(
-      new CounterMutation({
-        id: val.id,
-        value: val.value,
-      }),
-    );
+    CounterMutation(this.props.relay.environment, val);
   }
 
 

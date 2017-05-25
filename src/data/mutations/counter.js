@@ -1,45 +1,16 @@
-import Relay from 'react-relay/classic';
+import { commitMutation, graphql } from 'react-relay';
 
-class CreateCounterMutation extends Relay.Mutation {
-  getMutation() {
-    return Relay.QL`mutation _($input: CounterInput!) {
-                      createCounter(input: $input) {
-                        id,
-                        value
-                      }
-                    }`;
-  }
+const mutation = graphql`
+  mutation counterMutation($input: CounterInput!) {
+              createCounter(input: $input) {
+                            id,
+                           value
+                         }
+                       }`;
 
-  getVariables() {
-    return {
-      id: this.props.id,
-      value: this.props.value,
-      clientMutationId: this.props.id
-    };
-  }
+const getVariables = (vals) => ({input: {...vals}});
 
-  getFatQuery() {
-    return Relay.QL`fragment on Counter {
-        id
-        value
-      }`;
-  }
-
-  getOptimisticResponse() {
-    return {
-      id: this.props.id,
-      value: this.props.value
-    }
-  }
-
-  getConfigs() {
-    return [{
-      type: 'FIELDS_CHANGE',
-      fieldIDs: {
-        id: this.props.id,
-      },
-    }];
-  }
-}
-
-export default CreateCounterMutation;
+export default (environment, variables) => {
+  commitMutation(environment, {mutation, variables: getVariables(variables),
+    onCompleted: (response) => console.log('Success!'),
+  onError: err => console.error(err),}) }
